@@ -6,49 +6,60 @@
 
 
 
-float** crear_matriz(int* fil,int* col){
+int** crear_matriz(int nFil,int nCol){
 
-  float** Matriz;
+  int** Matriz;
 
   //Si queremos una matriz de X filas e Y columnas en primer lugar tenemos que reservas las filas (primer indice)
   //Simplemente sera un vector de punteros de tipo float, que apuntan al primer indice de la fila
-  Matriz = (float **) calloc(fil,sizeof(float *));
+  Matriz = (int **) calloc(nFil,sizeof(int *));
   //Para el numero de filas de la matriz tenemos que crear las columnas
-  for (int i = 0;i<fil;i++){
+  for (int i = 0;i<nFil;i++){
 
     //Para cada una de las filas (vectores) creadas con anterioridad tenemos que ajustar el tamaño
     //De esta forma cada elemento de la fila tendra el tamaño de un float
-    Matriz[i] = (float *) calloc(col,sizeof(float));
+    Matriz[i] = (int *) calloc(nCol,sizeof(int));
 
   }
   return Matriz;
 }
+//llenamos la matriz de valores dinamicos
+void fildMatrix(int ** matriz,int nFil,int nCol){
 
-int main(int argc, char const *argv[]) {
-   srand(time(0));
-  int fil=2,  col=3;
-  float** p;
-/*  printf("Introduce las filas\n" );
-  scanf("%i\n",&fil );
-  printf("Introduce las columnas\n" );
-  scanf("%i\n",&col );*/
+  srand(time(NULL));
+  for (int i = 0; i<nFil;i++){
+    for (int j = 0; j<nCol;j++){
+      matriz[i][j] = rand()%56;
+    }
+  }
 
-  p = crear_matriz(fil,col);
-
-  p[0][0]=1.1;
-  p[0][1]=1.2;
-  p[0][2]=1.3;
-  p[1][0]=2.1;
-  p[1][1]=2.2;
-  p[1][2]=2.3;
-
-  for (int k=0; k<fil; k++){
-  printf("\n");
-  for (int l=0; l<col; l++)
-    printf("\t%f", p[k][l] );
 }
 
+//Funcion para imprimir la matriz
+void printMatrix(int ** matriz,int nFil,int nCol){
+  for (int i = 0; i<nFil;i++){
+    printf("\n");
+    for (int j = 0; j<nCol;j++){
+      printf("%d\t",matriz[i][j]);
+    }
+  }
+}
 
-  free(p);
-  return 0;
+int main(int argc, char const *argv[]) {
+  srand(time(0));
+  int nFil=2,  nCol=3;
+  int** pMatriz;
+
+  pMatriz = crear_matriz(nFil,nCol);
+  fildMatrix(pMatriz,nFil,nCol);
+  printMatrix(pMatriz,nFil,nCol);
+
+
+
+//Hay que tener en cuenta que para liberar la memoria tenemos que liberar la memoria de cada filas
+for (int i = 0; i<nFil;i++){
+  free(pMatriz[i]);
+}
+free(pMatriz);
+return 0;
 }
