@@ -38,9 +38,9 @@ int main(int argc, char const *argv[]) {
   printf("Vector creado correctamente en %p\n",p );
   //Recorremos el vector
   for (int i = 0; i<tamano;i++){
-
     printf("%f\n",*p+i );
   }
+  printf("VECTOR RELLENO\n");
   //Llenamos el vector y lo Recorremos
   //PASAMOS EL VECTOR COMO REFERENCIA (PUNTERO DONDE COMIENZA Y LONGITUD)
   rellenar_vector(p,tamano);
