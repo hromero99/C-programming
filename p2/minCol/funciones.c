@@ -8,7 +8,7 @@ int ** buildMatrix(int nFil,int nCol){
 
   pMatrix = calloc(nFil,sizeof(int *));
 
-  for (int i = 0; i<nCol;i++){
+  for (int i = 0; i<nFil;i++){
 
     pMatrix[i] = calloc(nCol,sizeof(int));
   }
