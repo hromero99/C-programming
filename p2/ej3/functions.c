@@ -67,6 +67,6 @@ int KickPlayer(ficha *team, char *caracter,int size){
 		}
 		printf("\n");
 	}
-	(ficha *)realloc(team,(size-aux));
+	team = (ficha *)realloc(team,(size-aux));
 	return (size-aux);
 }
