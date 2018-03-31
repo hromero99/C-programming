@@ -24,7 +24,7 @@ int main(int argc, char const *argv[]) {
   printf("\n");
   printf("Min Values\n" );
   printValues(min,minAux);
-  printf("/n");
+  printf("\n");
   //Liberamos la memoria
   free(array);
   free(max);
