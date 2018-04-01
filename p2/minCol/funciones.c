@@ -5,39 +5,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-<<<<<<< HEAD
-=======
-/**
-@file funciones.c
-@brief Matrix functions code
-@author Hector
-@date today
-
-Este fichero tiene funciones para trabajar con matrices
-@li Reservar memoria
-@li Rellenar matriz de forma aleatoria
-@li Imprimir una matriz
-@li Obtener los mínimos de cada columna
-*/
-
-/**
-@fn buildMatrix
-@brief function used to reserve memory for a Matrix
-@param nFil File number
-@param nCol Column number
-@return matrix pointer
-
-Esta funcion reserva memoria con calloc inicianlizando a cero los valores, para posteriormente esribir valores apropiados
-*/
->>>>>>> fd32fc4b8728400d5c3a5d25dc41bc713a296a03
 
 int ** buildMatrix(int nFil,int nCol){
 
   int ** pMatrix;
-<<<<<<< HEAD
-=======
+
   ///Save memory for the array of pointers
->>>>>>> fd32fc4b8728400d5c3a5d25dc41bc713a296a03
   pMatrix = calloc(nFil,sizeof(int *));
 
   for (int i = 0; i<nFil;i++){
