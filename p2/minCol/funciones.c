@@ -1,11 +1,14 @@
-
+/**
+@file funciones.c
+@brief Matrix functions code
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+
 int ** buildMatrix(int nFil,int nCol){
 
   int ** pMatrix;
-
   pMatrix = calloc(nFil,sizeof(int *));
 
   for (int i = 0; i<nFil;i++){
@@ -25,7 +28,7 @@ void fildMatrix(int ** matriz,int nFil,int nCol){
   srand(time(NULL));
   for (int i = 0; i<nFil;i++){
     for (int j = 0; j<nCol;j++){
-    *(*(matriz+i)+j) = rand()%20+1;
+      *(*(matriz+i)+j) = rand()%20+1;
     }
   }
 
