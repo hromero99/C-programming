@@ -11,7 +11,7 @@ ficha* BuildVector(int size){
 		exit(1);
 	}
 	else{
-		printf("Vector start on %p\n",vector );
+		//printf("Vector start on %p\n",vector );
 		return vector;
 	}
 }
@@ -20,16 +20,17 @@ ficha RegisterNewPlayer(ficha *player){
 	char name[50];
 	int dorsal,estatura, peso;
 	printf("Introduce el nombre del jugador\n");
+	setbuf(stdin,NULL);
 	gets(name);
 	strcpy(player->nombre,name);
 	printf("Introduce el dorsal del jugador\n");
-	scanf("%i\n",&dorsal );
+	scanf("%i",&dorsal );
 	player->dorsal = dorsal;
 	printf("Introduce el peso del jugador\n" );
-	scanf("%i\n",&peso );
+	scanf("%i",&peso );
 	player->peso = peso;
 	printf("Introduce la estatura del jugador\n" );
-	scanf("%i\n",&estatura );
+	scanf("%i",&estatura );
 	player->estatura = estatura;
 	return *player;
 }
@@ -57,16 +58,22 @@ void ShowPlayers(ficha *team,int size){
 	}
 }
 
-int KickPlayer(ficha *team, char *caracter,int size){
-	int aux = 0;
+int KickPlayer(ficha *team, char caracter,int size){
+
 	for (int i = 0;i<size;i++){
-		if (strstr(((team+i)->nombre),caracter)){
+		if (strchr(((team+i)->nombre),caracter)){
 			printf("Caracter found\n");
-			*(team) = *(team+1);
-			aux++;
+			printf("%s\n",(team+i)->nombre );
+			size = size - 1;
+			for (int j = i; j<size;j++){
+				*(team+j) = *(team+1);
+			}
+			i = i-1;
 		}
+
 		printf("\n");
 	}
-	team = (ficha *)realloc(team,(size-aux));
-	return (size-aux);
+	team = (ficha *)realloc(team,size);
+
+	return (size);
 }

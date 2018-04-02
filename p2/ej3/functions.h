@@ -13,5 +13,5 @@ ficha RegisterNewPlayer(ficha *player);
 void PrintPlayerInfo(ficha *player);
 void FildPlayerArray(ficha *team,int size);
 void ShowPlayers(ficha *team,int size);
-int KickPlayer(ficha *team, char *caracter,int size);
+int KickPlayer(ficha *team, char caracter,int size);
 #endif
