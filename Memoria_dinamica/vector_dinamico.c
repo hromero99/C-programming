@@ -10,6 +10,10 @@ float* crear_vector(int* tamano){
   float* puntero_al_vector;
 
   puntero_al_vector = calloc(*tamano, sizeof(float));
+  if (puntero_al_vector == NULL){
+    printf("Fallo al reservar memoria\n");
+    exit(-1);
+  }
 
   return puntero_al_vector;
 

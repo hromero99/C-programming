@@ -13,6 +13,11 @@ int** crear_matriz(int nFil,int nCol){
   //Si queremos una matriz de X filas e Y columnas en primer lugar tenemos que reservas las filas (primer indice)
   //Simplemente sera un vector de punteros de tipo float, que apuntan al primer indice de la fila
   Matriz = (int **) calloc(nFil,sizeof(int *));
+  //Comprobamos que la mempria se ha reservado de forma correcta
+  if (Matriz == NULL){
+    printf("Fallo al reservar memoria\n");
+    exit(-1);
+  }
   //Para el numero de filas de la matriz tenemos que crear las columnas
   for (int i = 0;i<nFil;i++){
 
