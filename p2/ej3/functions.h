@@ -1,5 +1,5 @@
-#ifndef functions
-#define functions
+#ifndef FUNCTIONS_H
+#define FUNCTIONS_H
 
 typedef struct Ficha_jugador{
 	char nombre[50];

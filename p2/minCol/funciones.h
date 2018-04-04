@@ -10,8 +10,8 @@ Este fichero tiene funciones para trabajar con matrices
 @li Imprimir una matriz
 @li Obtener los mínimos de cada columna
 */
-#ifndef FUNCIONES
-#define  FUNCIONES
+#ifndef FUNCIONES_H
+#define  FUNCIONES_H
 /**
 @fn int ** buildMatrix(int nFil,int ncol);
 @brief function used to reserve memory for a Matrix
