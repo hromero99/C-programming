@@ -15,7 +15,7 @@ Este fichero tiene funciones para trabajar con matrices
 /**
 @fn int ** buildMatrix(int nFil,int ncol);
 @brief function used to reserve memory for a Matrix
-@param a  File number
+@param a  raws number
 @param b Column number
 @return return the pointer to the matrix
 
@@ -24,9 +24,9 @@ This function make the memory reservation for the matrix
 int ** buildMatrix(int nFil,int ncol);
 /**
 @fn void printMatrix(int ** matriz,int nFil,int nCol)
-@brief function used to rprin matrix values
+@brief function used to print matrix values
 @param a Matrix Pointer
-@param b  File number
+@param b  raws number
 @param c Column number
 @return the matrix is printed on screen
 
@@ -37,7 +37,7 @@ void printMatrix(int ** matriz,int nFil,int nCol);
 @fn void fildMatrix(int ** matriz,int nFil,int nCol)
 @brief function used to fild hte matrix with random values
 @param a Matrix Pointer
-@param b  File number
+@param b  raws number
 @param c Column number
 @return Nothing, the values are written on memory
 
@@ -48,11 +48,20 @@ void fildMatrix(int ** matriz,int nFil,int nCol);
 @fn int * minCol(int** matriz, int nFil,int nCol)
 @brief function to search lower values in column
 @param a Matrix Pointer
-@param b  File number
+@param b  raws number
 @param c Column number
 @return Pointer to a vector of number
 
 The function make a vector wich contains the lower number of each column in the matrix
 */
 int * minCol(int** matriz, int nFil,int nCol);
+/**
+@fn void FreeMatriz(int** matriz, int nFil)
+@brief Fucntion to free the memory of the Matrix
+@param int** matriz The matrix
+@param int nFil Number of raws
+@return nothing
+*/
+void FreeMatriz(int** matriz, int nFil);
+
 #endif

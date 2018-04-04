@@ -17,6 +17,7 @@ int main(int argc, char const *argv[]) {
   for (int i =0; i<nCol; i++){
     printf("\t%d",*(valores+i));
   }
+  FreeMatriz(matriz,nFil);
 
   return 0;
 }

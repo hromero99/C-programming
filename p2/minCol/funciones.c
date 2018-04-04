@@ -63,3 +63,12 @@ int * minCol(int** matriz, int nFil,int nCol){
 
   return valores;
 }
+
+
+void FreeMatriz(int** matriz, int nFil){
+  for (int i = 0;i<nFil;i++){
+    free(*(matriz+i));
+  }
+  free(matriz);
+  printf("\nMatriz liberada correctamente\n");
+}
