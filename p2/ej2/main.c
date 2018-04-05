@@ -2,8 +2,6 @@
 #include <stdio.h>
 #include "funciones.h"
 
-
-
 int main(int argc, char const *argv[]) {
 
   int arraySize = 12,maxSize = 12,minSize=12 , minAux = 0,maxAux = 0;
@@ -15,7 +13,7 @@ int main(int argc, char const *argv[]) {
   fillArray(array,arraySize);
 
 
-  ArrayValues(array,arraySize,2,max,min,&minAux,&maxAux);
+  ArrayValues(array,arraySize,15,max,min,&minAux,&maxAux);
 
   printValues(array,arraySize);
   printf("\n" );

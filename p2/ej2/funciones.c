@@ -1,18 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+
 int * buildArray(int size){
   int* pArray;
   pArray = calloc(size, sizeof(int ));
-  return pArray;
+  if (pArray == NULL){
+	printf("Fallo al reservar memoria\n");
+	exit(-1);
+  }
+  else{
+	return pArray;
+  }
 }
 
 void fillArray(int array[], int size){
   srand(time(NULL));
   for ( int i = 0;i<size;i++){
-    *(array+i) = rand()%20;
-
-
+    *(array+i) = rand()%40;
   }
 }
 
