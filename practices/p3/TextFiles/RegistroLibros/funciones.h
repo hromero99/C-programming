@@ -8,12 +8,13 @@ typedef struct DatosLibro{
   int precio;
 }libro;
 
+void WriteRegister(libro* BookData, char* NombreFichero);
 void AddBook(char* NombreFichero);
 void Searchbook(char* NombreFichero,char* Title);
 void ClearString(char* StringToClear);
 int CountBooks(char* NombreFichero);
 libro* BookArray(char* NombreFichero);
-libro* SellBook(char* NombreFichero,char* Title);
+void SellBook(char* NombreFichero,char* Title);
 void PrintVector(char* NombreFichero,libro* Library);
 
 
