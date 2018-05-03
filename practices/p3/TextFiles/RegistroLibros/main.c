@@ -3,7 +3,7 @@
 int main(int argc, char const *argv[]){
   //libro* Library = BookArray("fichero.txt");
   //AddBook("fichero.txt");
-  Searchbook("fichero.txt","asd");
+  Searchbook("fichero.txt","asd asd");
   CountBooks("fichero.txt");
   BookArray("fichero.txt");
   SellBook("fichero.txt","titulo2");

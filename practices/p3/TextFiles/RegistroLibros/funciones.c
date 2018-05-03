@@ -160,8 +160,8 @@ void SellBook(char* NombreFichero,char* Title){
     }
 
   //Funcion para escribir todos los libros dentro del fichero
-  /*for(int i=0;i<Arraysize;i++){
+  for(int i=0;i<Arraysize;i++){
     WriteRegister((Library+i),NombreFichero);
-  }*/
+  }
 
 }
