@@ -1,0 +1,300 @@
+\hypertarget{funciones_8h}{}\section{Referencia del Archivo funciones.\+h}
+\label{funciones_8h}\index{funciones.\+h@{funciones.\+h}}
+\subsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_book_data}{Book\+Data}}
+\begin{DoxyCompactList}\small\item\em Estructura para almacenar los datos del libro Estructura creada que contiene informacion detallada (Titulo, autor, cantidad y precio) de un determinado libro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{funciones_8h_a0cd3c8a744c5e96ac5e11050f16f3476}\label{funciones_8h_a0cd3c8a744c5e96ac5e11050f16f3476}} 
+typedef struct \mbox{\hyperlink{struct_book_data}{Book\+Data}} \mbox{\hyperlink{funciones_8h_a0cd3c8a744c5e96ac5e11050f16f3476}{book}}
+\begin{DoxyCompactList}\small\item\em definicion de struct \mbox{\hyperlink{struct_book_data}{Book\+Data}} Creacion del tipo book para trabajr con mayor comodidad en las estructuras \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{funciones_8h_a0cd3c8a744c5e96ac5e11050f16f3476}{book}} $\ast$ \mbox{\hyperlink{funciones_8h_a9a6b7343bbc0dba3be4894f74493d353}{Make\+Array}} (char $\ast$File\+Name)
+\begin{DoxyCompactList}\small\item\em Funcion para crear vector de libros. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{funciones_8h_a1a907fd4109f7297bf7db9a48ed32374}{Clear\+Line}} (char $\ast$String\+To\+Clear)
+\begin{DoxyCompactList}\small\item\em Funcion para eliminar los saltos de linea. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{funciones_8h_a66809a73a245ca6ff5dc1b8cc4d16a66}{Print\+Array}} (char $\ast$File\+Name, \mbox{\hyperlink{funciones_8h_a0cd3c8a744c5e96ac5e11050f16f3476}{book}} $\ast$Library)
+\begin{DoxyCompactList}\small\item\em Funcion para imprimir el contenido de un vector de libros generado anteriormente. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{funciones_8h_a0ea55aa1a39fcea1139eb16223e5fc22}{Book\+Number}} (char $\ast$File\+Name)
+\begin{DoxyCompactList}\small\item\em Devuelve la cantidad de libros existentes en stock. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{funciones_8h_ac8417b944398a04c51763b49bba83ac5}{Check\+No\+Title}} (char $\ast$File\+Name, char $\ast$Title)
+\begin{DoxyCompactList}\small\item\em Funcion que compueba la existencia de un Titulo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{funciones_8h_a3df0b3f830e2550a74895a36219e6a39}{Add\+Book}} (char $\ast$File\+Name)
+\begin{DoxyCompactList}\small\item\em Funcion para agregar un libro al stock. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{funciones_8h_a086fbe02ee97603c32fcc6c9f50923ad}{Sell\+Book}} (char $\ast$File\+Name)
+\begin{DoxyCompactList}\small\item\em Funcion para vender libros. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{funciones_8h_ae92ff656b71684f0d2cf39d9bc197d47}{Write\+Library}} (char $\ast$File\+Name, \mbox{\hyperlink{funciones_8h_a0cd3c8a744c5e96ac5e11050f16f3476}{book}} $\ast$Library, int size)
+\begin{DoxyCompactList}\small\item\em Funcion para escribir el archivo en libreria, paritendo de un vector de estructuras. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{funciones_8h_a42c7a115a2879a99cc7ff8c9750c63d7}{Check\+Books}} (char $\ast$File\+Name)
+\begin{DoxyCompactList}\small\item\em Fucnion para eliminar los libros que no tienen existencias. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{funciones_8h_ac98860bdf4a44b0f995b207eb7fe76d0}{Exist\+Book}} (char $\ast$Nombre\+Fichero)
+\begin{DoxyCompactList}\small\item\em Funcion para comprobar la existencia de libros por el usuario. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{funciones_8h_afdf1ca9e7afc3e7ec41b47fea4b3d80d}{Menu}} ()
+\begin{DoxyCompactList}\small\item\em Menu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+\begin{DoxyAuthor}{Autor}
+Hector Romero Lopez 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Fecha}
+Indeterminada 
+\end{DoxyDate}
+\begin{DoxyVersion}{Versión}
+¿1.\+X?
+\end{DoxyVersion}
+Fichero que contiene las funciones para trabajar con un registro de libros, contiene las funcioes que permiten\+: \begin{DoxyItemize}
+\item Agregar libros \item Comprobar existencia de libros \item Mostrar el stock de libros \item Contar el numero de libros \item Eliminar libros con existencias agotadas \item Vender libros \end{DoxyItemize}
+
+
+\subsection{Documentación de las funciones}
+\mbox{\Hypertarget{funciones_8h_a3df0b3f830e2550a74895a36219e6a39}\label{funciones_8h_a3df0b3f830e2550a74895a36219e6a39}} 
+\index{funciones.\+h@{funciones.\+h}!Add\+Book@{Add\+Book}}
+\index{Add\+Book@{Add\+Book}!funciones.\+h@{funciones.\+h}}
+\subsubsection{\texorpdfstring{Add\+Book()}{AddBook()}}
+{\footnotesize\ttfamily void Add\+Book (\begin{DoxyParamCaption}\item[{char $\ast$}]{File\+Name }\end{DoxyParamCaption})}
+
+
+
+Funcion para agregar un libro al stock. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em File\+Name} & Nombre del fichero existente en disco \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+void, los cambios son escritos en el fichero 
+\end{DoxyReturn}
+
+
+Definición en la línea 102 del archivo funciones.\+c.
+
+\mbox{\Hypertarget{funciones_8h_a0ea55aa1a39fcea1139eb16223e5fc22}\label{funciones_8h_a0ea55aa1a39fcea1139eb16223e5fc22}} 
+\index{funciones.\+h@{funciones.\+h}!Book\+Number@{Book\+Number}}
+\index{Book\+Number@{Book\+Number}!funciones.\+h@{funciones.\+h}}
+\subsubsection{\texorpdfstring{Book\+Number()}{BookNumber()}}
+{\footnotesize\ttfamily int Book\+Number (\begin{DoxyParamCaption}\item[{char $\ast$}]{File\+Name }\end{DoxyParamCaption})}
+
+
+
+Devuelve la cantidad de libros existentes en stock. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em File\+Name} & Nombre del fichero existente en disco \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Cantidad de libros existentes 
+\end{DoxyReturn}
+
+
+Definición en la línea 63 del archivo funciones.\+c.
+
+\mbox{\Hypertarget{funciones_8h_a42c7a115a2879a99cc7ff8c9750c63d7}\label{funciones_8h_a42c7a115a2879a99cc7ff8c9750c63d7}} 
+\index{funciones.\+h@{funciones.\+h}!Check\+Books@{Check\+Books}}
+\index{Check\+Books@{Check\+Books}!funciones.\+h@{funciones.\+h}}
+\subsubsection{\texorpdfstring{Check\+Books()}{CheckBooks()}}
+{\footnotesize\ttfamily void Check\+Books (\begin{DoxyParamCaption}\item[{char $\ast$}]{File\+Name }\end{DoxyParamCaption})}
+
+
+
+Fucnion para eliminar los libros que no tienen existencias. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em File\+Name} & Nombre del fichero existente en disco \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+void, en el fichero los libros sin existencias son eliminadas 
+\end{DoxyReturn}
+
+
+Definición en la línea 197 del archivo funciones.\+c.
+
+\mbox{\Hypertarget{funciones_8h_ac8417b944398a04c51763b49bba83ac5}\label{funciones_8h_ac8417b944398a04c51763b49bba83ac5}} 
+\index{funciones.\+h@{funciones.\+h}!Check\+No\+Title@{Check\+No\+Title}}
+\index{Check\+No\+Title@{Check\+No\+Title}!funciones.\+h@{funciones.\+h}}
+\subsubsection{\texorpdfstring{Check\+No\+Title()}{CheckNoTitle()}}
+{\footnotesize\ttfamily int Check\+No\+Title (\begin{DoxyParamCaption}\item[{char $\ast$}]{File\+Name,  }\item[{char $\ast$}]{Title }\end{DoxyParamCaption})}
+
+
+
+Funcion que compueba la existencia de un Titulo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em File\+Name} & Nombre del fichero existente en disco \\
+\hline
+{\em Title} & titulo del libro que buscamos \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+valor entero (1 si existe el titulo, 0 si no existe) 
+\end{DoxyReturn}
+
+
+Definición en la línea 86 del archivo funciones.\+c.
+
+\mbox{\Hypertarget{funciones_8h_a1a907fd4109f7297bf7db9a48ed32374}\label{funciones_8h_a1a907fd4109f7297bf7db9a48ed32374}} 
+\index{funciones.\+h@{funciones.\+h}!Clear\+Line@{Clear\+Line}}
+\index{Clear\+Line@{Clear\+Line}!funciones.\+h@{funciones.\+h}}
+\subsubsection{\texorpdfstring{Clear\+Line()}{ClearLine()}}
+{\footnotesize\ttfamily void Clear\+Line (\begin{DoxyParamCaption}\item[{char $\ast$}]{String\+To\+Clear }\end{DoxyParamCaption})}
+
+
+
+Funcion para eliminar los saltos de linea. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em String\+To\+Clear} & Linea para limpiar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+void 
+\end{DoxyReturn}
+
+
+Definición en la línea 6 del archivo funciones.\+c.
+
+\mbox{\Hypertarget{funciones_8h_ac98860bdf4a44b0f995b207eb7fe76d0}\label{funciones_8h_ac98860bdf4a44b0f995b207eb7fe76d0}} 
+\index{funciones.\+h@{funciones.\+h}!Exist\+Book@{Exist\+Book}}
+\index{Exist\+Book@{Exist\+Book}!funciones.\+h@{funciones.\+h}}
+\subsubsection{\texorpdfstring{Exist\+Book()}{ExistBook()}}
+{\footnotesize\ttfamily int Exist\+Book (\begin{DoxyParamCaption}\item[{char $\ast$}]{Nombre\+Fichero }\end{DoxyParamCaption})}
+
+
+
+Funcion para comprobar la existencia de libros por el usuario. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em File\+Name} & Nombre del fichero existente en disco \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+valor entero (1 si existe el titulo, 0 si no existe) 
+\end{DoxyReturn}
+
+
+Definición en la línea 221 del archivo funciones.\+c.
+
+\mbox{\Hypertarget{funciones_8h_a9a6b7343bbc0dba3be4894f74493d353}\label{funciones_8h_a9a6b7343bbc0dba3be4894f74493d353}} 
+\index{funciones.\+h@{funciones.\+h}!Make\+Array@{Make\+Array}}
+\index{Make\+Array@{Make\+Array}!funciones.\+h@{funciones.\+h}}
+\subsubsection{\texorpdfstring{Make\+Array()}{MakeArray()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{funciones_8h_a0cd3c8a744c5e96ac5e11050f16f3476}{book}}$\ast$ Make\+Array (\begin{DoxyParamCaption}\item[{char $\ast$}]{File\+Name }\end{DoxyParamCaption})}
+
+
+
+Funcion para crear vector de libros. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em File\+Name} & Nombre del fichero existente en disco \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Vector de tipo book$\ast$ con el contenido de los libros en stock 
+\end{DoxyReturn}
+
+
+Definición en la línea 14 del archivo funciones.\+c.
+
+\mbox{\Hypertarget{funciones_8h_afdf1ca9e7afc3e7ec41b47fea4b3d80d}\label{funciones_8h_afdf1ca9e7afc3e7ec41b47fea4b3d80d}} 
+\index{funciones.\+h@{funciones.\+h}!Menu@{Menu}}
+\index{Menu@{Menu}!funciones.\+h@{funciones.\+h}}
+\subsubsection{\texorpdfstring{Menu()}{Menu()}}
+{\footnotesize\ttfamily void Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Menu. 
+
+\begin{DoxyReturn}{Devuelve}
+imprime el menu por pantalla 
+\end{DoxyReturn}
+
+
+Definición en la línea 233 del archivo funciones.\+c.
+
+\mbox{\Hypertarget{funciones_8h_a66809a73a245ca6ff5dc1b8cc4d16a66}\label{funciones_8h_a66809a73a245ca6ff5dc1b8cc4d16a66}} 
+\index{funciones.\+h@{funciones.\+h}!Print\+Array@{Print\+Array}}
+\index{Print\+Array@{Print\+Array}!funciones.\+h@{funciones.\+h}}
+\subsubsection{\texorpdfstring{Print\+Array()}{PrintArray()}}
+{\footnotesize\ttfamily void Print\+Array (\begin{DoxyParamCaption}\item[{char $\ast$}]{File\+Name,  }\item[{\mbox{\hyperlink{funciones_8h_a0cd3c8a744c5e96ac5e11050f16f3476}{book}} $\ast$}]{Library }\end{DoxyParamCaption})}
+
+
+
+Funcion para imprimir el contenido de un vector de libros generado anteriormente. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em File\+Name} & Nombre del fichero existente en disco \\
+\hline
+{\em Library} & Vector para imprimir \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+void, imprime informacion por pantalla 
+\end{DoxyReturn}
+
+
+Definición en la línea 53 del archivo funciones.\+c.
+
+\mbox{\Hypertarget{funciones_8h_a086fbe02ee97603c32fcc6c9f50923ad}\label{funciones_8h_a086fbe02ee97603c32fcc6c9f50923ad}} 
+\index{funciones.\+h@{funciones.\+h}!Sell\+Book@{Sell\+Book}}
+\index{Sell\+Book@{Sell\+Book}!funciones.\+h@{funciones.\+h}}
+\subsubsection{\texorpdfstring{Sell\+Book()}{SellBook()}}
+{\footnotesize\ttfamily void Sell\+Book (\begin{DoxyParamCaption}\item[{char $\ast$}]{File\+Name }\end{DoxyParamCaption})}
+
+
+
+Funcion para vender libros. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em File\+Name} & Nombre del fichero existente en disco \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+void, se reduce en 1 unidad el titulo vendido 
+\end{DoxyReturn}
+
+
+Definición en la línea 172 del archivo funciones.\+c.
+
+\mbox{\Hypertarget{funciones_8h_ae92ff656b71684f0d2cf39d9bc197d47}\label{funciones_8h_ae92ff656b71684f0d2cf39d9bc197d47}} 
+\index{funciones.\+h@{funciones.\+h}!Write\+Library@{Write\+Library}}
+\index{Write\+Library@{Write\+Library}!funciones.\+h@{funciones.\+h}}
+\subsubsection{\texorpdfstring{Write\+Library()}{WriteLibrary()}}
+{\footnotesize\ttfamily void Write\+Library (\begin{DoxyParamCaption}\item[{char $\ast$}]{File\+Name,  }\item[{\mbox{\hyperlink{funciones_8h_a0cd3c8a744c5e96ac5e11050f16f3476}{book}} $\ast$}]{Library,  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+
+Funcion para escribir el archivo en libreria, paritendo de un vector de estructuras. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em File\+Name} & Nombre del fichero existente en disco \\
+\hline
+{\em Library} & Vector de estructuras con los libros \\
+\hline
+{\em size} & longitud del vector para escribir \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+void, los cambios se realizan en el fichero 
+\end{DoxyReturn}
+
+
+Definición en la línea 139 del archivo funciones.\+c.
+

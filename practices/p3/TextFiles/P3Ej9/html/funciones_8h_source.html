@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Gestion de libros: Fichero Fuente funciones.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="icon.jpg"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Gestion de libros
+   &#160;<span id="projectnumber">1.X</span>
+   </div>
+   <div id="projectbrief">Gestion de stock de libros</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">funciones.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="funciones_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#ifndef FUNCIONES_H</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#define FUNCIONES_H</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div><div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="struct_book_data.html">   29</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_book_data.html">BookData</a>{</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordtype">char</span> title[100];</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordtype">char</span> author[100];</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keywordtype">float</span> price;</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">int</span> cant;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}<a class="code" href="funciones_8h.html#a0cd3c8a744c5e96ac5e11050f16f3476">book</a>;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<a class="code" href="struct_book_data.html">book</a>* <a class="code" href="funciones_8h.html#a9a6b7343bbc0dba3be4894f74493d353">MakeArray</a>(<span class="keywordtype">char</span>* FileName);</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keywordtype">void</span> <a class="code" href="funciones_8h.html#a1a907fd4109f7297bf7db9a48ed32374">ClearLine</a>(<span class="keywordtype">char</span>* StringToClear);</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keywordtype">void</span> <a class="code" href="funciones_8h.html#a66809a73a245ca6ff5dc1b8cc4d16a66">PrintArray</a>(<span class="keywordtype">char</span>*FileName,<a class="code" href="struct_book_data.html">book</a>* Library);</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keywordtype">int</span> <a class="code" href="funciones_8h.html#a0ea55aa1a39fcea1139eb16223e5fc22">BookNumber</a>(<span class="keywordtype">char</span>* FileName);</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keywordtype">int</span> <a class="code" href="funciones_8h.html#ac8417b944398a04c51763b49bba83ac5">CheckNoTitle</a>(<span class="keywordtype">char</span>* FileName,<span class="keywordtype">char</span>* Title);</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keywordtype">void</span> <a class="code" href="funciones_8h.html#a3df0b3f830e2550a74895a36219e6a39">AddBook</a>(<span class="keywordtype">char</span>* FileName);</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keywordtype">void</span> <a class="code" href="funciones_8h.html#a086fbe02ee97603c32fcc6c9f50923ad">SellBook</a> (<span class="keywordtype">char</span>* FileName);</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keywordtype">void</span> <a class="code" href="funciones_8h.html#ae92ff656b71684f0d2cf39d9bc197d47">WriteLibrary</a>(<span class="keywordtype">char</span>* FileName,<a class="code" href="struct_book_data.html">book</a>* Library,<span class="keywordtype">int</span> size);</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keywordtype">void</span> <a class="code" href="funciones_8h.html#a42c7a115a2879a99cc7ff8c9750c63d7">CheckBooks</a>(<span class="keywordtype">char</span>* FileName);</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="keywordtype">int</span> <a class="code" href="funciones_8h.html#ac98860bdf4a44b0f995b207eb7fe76d0">ExistBook</a>(<span class="keywordtype">char</span>* NombreFichero);</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="keywordtype">void</span> <a class="code" href="funciones_8h.html#afdf1ca9e7afc3e7ec41b47fea4b3d80d">Menu</a>();</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="funciones_8h_html_ac98860bdf4a44b0f995b207eb7fe76d0"><div class="ttname"><a href="funciones_8h.html#ac98860bdf4a44b0f995b207eb7fe76d0">ExistBook</a></div><div class="ttdeci">int ExistBook(char *NombreFichero)</div><div class="ttdoc">Funcion para comprobar la existencia de libros por el usuario. </div><div class="ttdef"><b>Definition:</b> <a href="funciones_8c_source.html#l00221">funciones.c:221</a></div></div>
+<div class="ttc" id="funciones_8h_html_ac8417b944398a04c51763b49bba83ac5"><div class="ttname"><a href="funciones_8h.html#ac8417b944398a04c51763b49bba83ac5">CheckNoTitle</a></div><div class="ttdeci">int CheckNoTitle(char *FileName, char *Title)</div><div class="ttdoc">Funcion que compueba la existencia de un Titulo. </div><div class="ttdef"><b>Definition:</b> <a href="funciones_8c_source.html#l00086">funciones.c:86</a></div></div>
+<div class="ttc" id="funciones_8h_html_a42c7a115a2879a99cc7ff8c9750c63d7"><div class="ttname"><a href="funciones_8h.html#a42c7a115a2879a99cc7ff8c9750c63d7">CheckBooks</a></div><div class="ttdeci">void CheckBooks(char *FileName)</div><div class="ttdoc">Fucnion para eliminar los libros que no tienen existencias. </div><div class="ttdef"><b>Definition:</b> <a href="funciones_8c_source.html#l00197">funciones.c:197</a></div></div>
+<div class="ttc" id="funciones_8h_html_a0ea55aa1a39fcea1139eb16223e5fc22"><div class="ttname"><a href="funciones_8h.html#a0ea55aa1a39fcea1139eb16223e5fc22">BookNumber</a></div><div class="ttdeci">int BookNumber(char *FileName)</div><div class="ttdoc">Devuelve la cantidad de libros existentes en stock. </div><div class="ttdef"><b>Definition:</b> <a href="funciones_8c_source.html#l00063">funciones.c:63</a></div></div>
+<div class="ttc" id="funciones_8h_html_afdf1ca9e7afc3e7ec41b47fea4b3d80d"><div class="ttname"><a href="funciones_8h.html#afdf1ca9e7afc3e7ec41b47fea4b3d80d">Menu</a></div><div class="ttdeci">void Menu()</div><div class="ttdoc">Menu. </div><div class="ttdef"><b>Definition:</b> <a href="funciones_8c_source.html#l00233">funciones.c:233</a></div></div>
+<div class="ttc" id="funciones_8h_html_a3df0b3f830e2550a74895a36219e6a39"><div class="ttname"><a href="funciones_8h.html#a3df0b3f830e2550a74895a36219e6a39">AddBook</a></div><div class="ttdeci">void AddBook(char *FileName)</div><div class="ttdoc">Funcion para agregar un libro al stock. </div><div class="ttdef"><b>Definition:</b> <a href="funciones_8c_source.html#l00102">funciones.c:102</a></div></div>
+<div class="ttc" id="funciones_8h_html_a086fbe02ee97603c32fcc6c9f50923ad"><div class="ttname"><a href="funciones_8h.html#a086fbe02ee97603c32fcc6c9f50923ad">SellBook</a></div><div class="ttdeci">void SellBook(char *FileName)</div><div class="ttdoc">Funcion para vender libros. </div><div class="ttdef"><b>Definition:</b> <a href="funciones_8c_source.html#l00172">funciones.c:172</a></div></div>
+<div class="ttc" id="funciones_8h_html_a0cd3c8a744c5e96ac5e11050f16f3476"><div class="ttname"><a href="funciones_8h.html#a0cd3c8a744c5e96ac5e11050f16f3476">book</a></div><div class="ttdeci">struct BookData book</div><div class="ttdoc">definicion de struct BookData Creacion del tipo book para trabajr con mayor comodidad en las estructu...</div></div>
+<div class="ttc" id="funciones_8h_html_ae92ff656b71684f0d2cf39d9bc197d47"><div class="ttname"><a href="funciones_8h.html#ae92ff656b71684f0d2cf39d9bc197d47">WriteLibrary</a></div><div class="ttdeci">void WriteLibrary(char *FileName, book *Library, int size)</div><div class="ttdoc">Funcion para escribir el archivo en libreria, paritendo de un vector de estructuras. </div><div class="ttdef"><b>Definition:</b> <a href="funciones_8c_source.html#l00139">funciones.c:139</a></div></div>
+<div class="ttc" id="funciones_8h_html_a1a907fd4109f7297bf7db9a48ed32374"><div class="ttname"><a href="funciones_8h.html#a1a907fd4109f7297bf7db9a48ed32374">ClearLine</a></div><div class="ttdeci">void ClearLine(char *StringToClear)</div><div class="ttdoc">Funcion para eliminar los saltos de linea. </div><div class="ttdef"><b>Definition:</b> <a href="funciones_8c_source.html#l00006">funciones.c:6</a></div></div>
+<div class="ttc" id="struct_book_data_html"><div class="ttname"><a href="struct_book_data.html">BookData</a></div><div class="ttdoc">Estructura para almacenar los datos del libro Estructura creada que contiene informacion detallada (T...</div><div class="ttdef"><b>Definition:</b> <a href="funciones_8h_source.html#l00029">funciones.h:29</a></div></div>
+<div class="ttc" id="funciones_8h_html_a9a6b7343bbc0dba3be4894f74493d353"><div class="ttname"><a href="funciones_8h.html#a9a6b7343bbc0dba3be4894f74493d353">MakeArray</a></div><div class="ttdeci">book * MakeArray(char *FileName)</div><div class="ttdoc">Funcion para crear vector de libros. </div><div class="ttdef"><b>Definition:</b> <a href="funciones_8c_source.html#l00014">funciones.c:14</a></div></div>
+<div class="ttc" id="funciones_8h_html_a66809a73a245ca6ff5dc1b8cc4d16a66"><div class="ttname"><a href="funciones_8h.html#a66809a73a245ca6ff5dc1b8cc4d16a66">PrintArray</a></div><div class="ttdeci">void PrintArray(char *FileName, book *Library)</div><div class="ttdoc">Funcion para imprimir el contenido de un vector de libros generado anteriormente. ...</div><div class="ttdef"><b>Definition:</b> <a href="funciones_8c_source.html#l00053">funciones.c:53</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Lunes, 7 de Mayo de 2018 00:09:56 para Gestion de libros por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>
