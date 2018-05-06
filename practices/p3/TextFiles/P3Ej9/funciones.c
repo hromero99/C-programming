@@ -230,15 +230,11 @@ int ExistBook(char* NombreFichero){
     return 0;
   }
 }
-void Menu(){
+void Menu(char* FileName){
   int choose=-1;
   char buffer[100];
   book* Library;
-  char FileName[100];
-  printf("Introduce el nombre del fichero:");
-  setbuf(stdin,NULL);
-  fgets(FileName,100,stdin);
-  ClearLine(FileName);
+
   while(choose != 7 ){
     printf("##############################################\n");
     printf("## 1.- Comprobar la existencia de un libro  ## \n");

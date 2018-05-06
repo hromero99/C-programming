@@ -107,9 +107,10 @@ void CheckBooks(char* FileName);
 */
 int ExistBook(char* NombreFichero);
 /**
-@fn void Menu()
+@fn void Menu(const char* FileName)
 @brief Menu
+@param FileName Nombre del fichero existente en disco
 @return imprime el menu por pantalla
 */
-void Menu();
+void Menu(char* FileName);
 #endif
