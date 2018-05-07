@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 #include "funciones.h"
 
 void ClearLine(char* StringToClear){
@@ -25,29 +26,35 @@ book* MakeArray(char* FileName){
     exit(-1);
   }
   //Create dinamic array,size will be the result of a function
-  Library = calloc(size,sizeof(book));
-  if (Library == NULL){
-    printf("[-]La reserva de memoria ha fallado\n");
-    exit(-1);
+  if (size >0){
+    Library = calloc(size,sizeof(book));
+    if (Library == NULL){
+      printf("[-]La reserva de memoria ha fallado\n");
+      exit(-1);
+    }
+    //Read the file and create the Dinamic Array
+
+    while(!feof(file)){
+      book TmpData;
+      fgets(buffer,100,file);
+      ClearLine(buffer);
+      strcpy(TmpData.title,buffer);
+      fgets(buffer,100,file);
+      ClearLine(buffer);
+      strcpy(TmpData.author,buffer);
+      //Now int values
+      fscanf(file,"%f\t%i\n",&TmpData.price,&TmpData.cant);
+      *(Library+aux) = TmpData;
+      aux++;
+    }
+    fclose(file);
+    return Library;
+  }
+  else{
+    printf("No existen libros en el stock\n");
   }
 
-  //Read the file and create the Dinamic Array
 
-  while(!feof(file)){
-    book TmpData;
-    fgets(buffer,100,file);
-    ClearLine(buffer);
-    strcpy(TmpData.title,buffer);
-    fgets(buffer,100,file);
-    ClearLine(buffer);
-    strcpy(TmpData.author,buffer);
-    //Now int values
-    fscanf(file,"%f\t%i\n",&TmpData.price,&TmpData.cant);
-    *(Library+aux) = TmpData;
-    aux++;
-  }
-  fclose(file);
-  return Library;
 }
 
 void PrintArray(char*FileName,book* Library){
@@ -92,9 +99,11 @@ int CheckNoTitle(char* FileName,char* Title){
     for(int i =0;i<size;i++){
       ClearLine(Title);
       if( (strcmp(Title,(Library+i)->title) )==0){
+        free(Library);
         return 1;
       }
     }
+    free(Library);
     return 0;
   }
 }
@@ -110,7 +119,7 @@ void AddBook(char* FileName){
   printf("[?]Introduce la cantidad:");
   setbuf(stdin,NULL);
   scanf("%i",&TmpData.cant );
-  printf("[?]Introduce la cantidad:");
+  printf("[?]Introduce el precio:");
   scanf("%f",&TmpData.price );
   //Check the title
 
@@ -122,6 +131,7 @@ void AddBook(char* FileName){
       printf("[-]Error abriendo el fichero\n");
       exit(-1);
     }
+    ClearLine(TmpData.title);
     sprintf(buffer,"%s\n",TmpData.title);
     fputs(buffer,file);
     fputs(TmpData.author,file);
@@ -190,6 +200,7 @@ void SellBook (char* FileName){
       }
     }
     WriteLibrary(FileName,Library,size);
+    free(Library);
   }
   CheckBooks(FileName);
 }
@@ -217,6 +228,8 @@ void CheckBooks(char* FileName){
   //WriteLibrary(FileName,NewLibrary,aux+1);
   NewLibrary = realloc(NewLibrary,aux);
   WriteLibrary(FileName,NewLibrary,aux);
+  free(NewLibrary);
+  free(Library);
 }
 int ExistBook(char* NombreFichero){
   char Title[100];
@@ -234,7 +247,13 @@ void Menu(char* FileName){
   int choose=-1;
   char buffer[100];
   book* Library;
-
+  if (access (FileName,F_OK) == -1){
+    FILE *f;
+    f = fopen (FileName,"w");
+    if (f!=NULL){
+      fclose (f);
+    }
+  }
   while(choose != 7 ){
     printf("##############################################\n");
     printf("## 1.- Comprobar la existencia de un libro  ## \n");
