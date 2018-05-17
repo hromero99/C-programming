@@ -119,6 +119,7 @@ void AddBook(char* FileName){
   printf("[?]Introduce la cantidad:");
   setbuf(stdin,NULL);
   scanf("%i",&TmpData.cant );
+  setbuf(stdin,NULL);
   printf("[?]Introduce el precio:");
   scanf("%f",&TmpData.price );
   //Check the title
@@ -189,20 +190,27 @@ void SellBook (char* FileName){
   if ((CheckNoTitle(FileName,title))) {
     Library = MakeArray(FileName);
     size = BookNumber(FileName);
-    for (int i = 0;i<size;i++){
-      if(strcmp((Library+i)->title,title) == 0){
-        if((Library+i)->cant >0){
-          (Library+i)->cant = (Library+i)->cant -1 ;
-        }
-        else{
-          printf("[!]El libro no tiene existencias\n");
-        }
-      }
-    }
-    WriteLibrary(FileName,Library,size);
-    free(Library);
+		if (size != 0 ){
+	    for (int i = 0;i<size;i++){
+  	    if(strcmp((Library+i)->title,title) == 0){
+    	    if((Library+i)->cant >0){
+      	    (Library+i)->cant = (Library+i)->cant -1 ;
+        	}
+	        else{
+  	        printf("[!]El libro no tiene existencias\n");
+    	    }
+      	}
+    	}
+			WriteLibrary(FileName,Library,size);
+	   	free(Library);
+			CheckBooks(FileName);
+	 }
+		else{
+			printf("No existen libros en stock\n");
+		}
+
   }
-  CheckBooks(FileName);
+
 }
 
 void CheckBooks(char* FileName){
