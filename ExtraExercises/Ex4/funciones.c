@@ -40,6 +40,7 @@ void WriteBinaryFile(char* BinaryFile, int*BookSize){
   fclose(file);
 }
 
+
 BookData* ReadFileContent (char* BinaryFile,int*size){
   BookData* library = calloc(*size,sizeof(BookData));
   FILE* file;
@@ -62,7 +63,9 @@ int Ordenar (const void  *a, const void  *b){
 }
 
 void OrdenaLibrary(BookData* library, int* size){
- ize,sizeof(BookData),pf);
+  int(*pf)(const void *a, const void *b);
+  pf = Ordenar;
+  qsort(library,*size,sizeof(BookData),pf);
   for(int i = 0; i< *size; i++){
 
     printf("%d\n",(library+i)->cantidad);
