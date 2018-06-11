@@ -118,6 +118,7 @@ void AddBook(char* FileName){
   fgets(TmpData.author,100,stdin);
   printf("[?]Introduce la cantidad:");
   setbuf(stdin,NULL);
+  //getchar();
   scanf("%i",&TmpData.cant );
   setbuf(stdin,NULL);
   printf("[?]Introduce el precio:");
@@ -132,6 +133,7 @@ void AddBook(char* FileName){
       printf("[-]Error abriendo el fichero\n");
       exit(-1);
     }
+
     ClearLine(TmpData.title);
     sprintf(buffer,"%s\n",TmpData.title);
     fputs(buffer,file);
@@ -187,6 +189,7 @@ void SellBook (char* FileName){
   printf("Introduce el titulo para vender:" );
   setbuf(stdin,NULL);
   fgets(title,100,stdin);
+
   if ((CheckNoTitle(FileName,title))) {
     Library = MakeArray(FileName);
     size = BookNumber(FileName);
