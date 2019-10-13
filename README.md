@@ -1,7 +1,13 @@
 # C-programming
 
-Ejemplos de código en C
+This repo contains examples of programming on C ANSI.
 
-AVISO --> Los ficheros de pratica estarán programados como el culo, si quieres ejemplo de Vectores,Matrices etc obviar esas carpetas, también decir que no todo estará perfecto :-)
+A lot of this code was made for universiy practices, so the quality maybe is like SHIT.
 
-Contacto: t.me/cyberh99 
+**If you find some error please feel free to make pull request**
+
+**Contact:** @hromero99 on Twitter
+
+# Cuda
+
+The cuda folder contains some C cuda examples used for learn and maybe later make some project
